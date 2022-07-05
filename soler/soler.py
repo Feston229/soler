@@ -8,13 +8,7 @@ import os
 
 class Soler:
     def __init__(self, BLOCK_SIZE=32):
-        self.set_block_size(BLOCK_SIZE)
-
-    def set_block_size(self, BLOCK_SIZE):
-        if BLOCK_SIZE in [16, 24, 32]:
-            self.BLOCK_SIZE = BLOCK_SIZE
-        else:
-            raise Exception()
+        self.BLOCK_SIZE = BLOCK_SIZE
 
     def pad(self, s):
         return s + (self.BLOCK_SIZE - len(s) % self.BLOCK_SIZE) * chr(
